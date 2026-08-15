@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background:
+        radial-gradient(circle at top, #4b1639, #180b1d 55%, #090509);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Main container */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* Birthday Card */
+
+.birthday-card {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    padding: 45px 30px;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 50px rgba(255, 70, 160, 0.25);
+
+    position: relative;
+    z-index: 2;
+
+    animation: cardAppear 1.5s ease;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.small-text {
+    color: #ffb4d8;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 65px;
+    color: #ff77b7;
+    text-shadow: 0 0 20px rgba(255, 119, 183, 0.5);
+}
+
+h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 55px;
+    margin-top: -5px;
+    color: white;
+}
+
+.arabic {
+    font-family: "Amiri", serif;
+    font-size: 32px;
+    color: #ffd1e6;
+    margin: 10px 0;
+}
+
+.date {
+    color: #ddd;
+    font-size: 14px;
+}
+
+/* Cake */
+
+.cake {
+    width: 180px;
+    height: 150px;
+    margin: 35px auto 20px;
+    position: relative;
+}
+
+.cake-top {
+    position: absolute;
+    bottom: 50px;
+    left: 15px;
+
+    width: 150px;
+    height: 35px;
+
+    background: #ff8fc4;
+    border-radius: 50%;
+}
+
+.cake-body {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+
+    width: 140px;
+    height: 65px;
+
+    background: linear-gradient(
+        #ff6fae,
+        #d92f78
+    );
+
+    border-radius: 10px 10px 20px 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 20px;
+}
+
+.candle {
+    position: absolute;
+    width: 12px;
+    height: 45px;
+
+    background: #fff;
+    left: 84px;
+    bottom: 82px;
+
+    border-radius: 5px;
+
+    z-index: 2;
+}
+
+.flame {
+    width: 18px;
+    height: 25px;
+
+    background: #ffd166;
+
+    border-radius: 50% 50% 50% 50%;
+
+    position: absolute;
+    top: -25px;
+    left: -3px;
+
+    animation: flame 0.7s infinite alternate;
+}
+
+@keyframes flame {
+    from {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Countdown */
+
+.countdown-section {
+    margin: 25px 0;
+}
+
+.countdown-section p {
+    color: #ffb4d8;
+    margin-bottom: 15px;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+#countdown div {
+    min-width: 75px;
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+}
+
+#countdown span {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ff82bc;
+}
+
+#countdown small {
+    color: #ddd;
+}
+
+/* Button */
+
+#surpriseBtn {
+    margin-top: 20px;
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f9a,
+        #ff78b8
+    );
+
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 25px rgba(255, 79, 154, 0.4);
+
+    transition: 0.3s;
+}
+
+#surpriseBtn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 35px rgba(255, 79, 154, 0.6);
+}
+
+/* Message */
+
+.message {
+    display: none;
+
+    margin-top: 30px;
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    animation: messageAppear 1s ease;
+}
+
+.message.show {
+    display: block;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.message h3 {
+    font-family: "Dancing Script", cursive;
+    color: #ff82bc;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.message p {
+    line-height: 1.9;
+    color: #eee;
+    min-height: 130px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-family: "Dancing Script", cursive;
+    font-size: 25px;
+    color: #ffc1dd;
+}
+
+.wish-date {
+    margin-top: 20px;
+    color: #ff82bc;
+    font-weight: 600;
+}
+
+/* Floating Hearts */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+
+    font-size: 20px;
+
+    animation: floatHeart linear forwards;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* Sparkle */
+
+.sparkle {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+
+    font-size: 25px;
+
+    animation: sparkle 1.5s infinite alternate;
+}
+
+@keyframes sparkle {
+    from {
+        transform: scale(0.7) rotate(0);
+    }
+
+    to {
+        transform: scale(1.3) rotate(20deg);
+    }
+}
+
+/* Music button */
+
+.music-btn {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ff4f9a;
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .birthday-card {
+        padding: 35px 18px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    .arabic {
+        font-size: 27px;
+    }
+
+    #countdown {
+        gap: 5px;
+    }
+
+    #countdown div {
+        min-width: 65px;
+        padding: 8px 4px;
+    }
+
+    #countdown span {
+        font-size: 20px;
+    }
+}
